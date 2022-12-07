@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/listOfImageFragment">
+
+    <fragment android:id="@+id/listOfImageFragment"
+              android:name="com.example.unsplashapi.ui.listOfImage.ListOfImageFragment"
+              android:label="fragment_list_of_image" tools:layout="@layout/fragment_list_of_image">
+        <action android:id="@+id/action_listOfImageFragment_to_imageDetailsFragment"
+                app:destination="@id/imageDetailsFragment"/>
+    </fragment>
+    <fragment android:id="@+id/imageDetailsFragment"
+              android:name="com.example.unsplashapi.ui.imageDetails.ImageDetailsFragment"
+              android:label="fragment_image_details" tools:layout="@layout/fragment_image_details">
+        <action android:id="@+id/action_imageDetailsFragment_to_listOfImageFragment"
+                app:destination="@id/listOfImageFragment"/>
+        <argument android:name="image" app:argType="com.example.unsplashapi.model.DataItem"/>
+    </fragment>
+</navigation>
