@@ -30,7 +30,7 @@ class ImageDetailsFragment : Fragment() {
         val data = requireArguments().get("image") as DataItem
 
         Picasso.get()
-            .load(data.urls?.full)
+            .load(data.urls?.small)
             .placeholder(R.drawable.ic_launcher_background)
             .into(binding.ivLogoDetails)
 
